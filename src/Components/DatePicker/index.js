@@ -1,35 +1,11 @@
-import React, { useState, useEffect } from "react";
-import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import Paper from "@mui/material/Paper";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { TextField, Button, FormLabel, Grid, CardContent } from "@mui/material";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import { styled } from "@mui/material/styles";
+import {Button } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import PropTypes from "prop-types";
 import CardModel from "../CardModel";
-
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
-    padding: theme.spacing(2),
-  },
-  "& .MuiDialogActions-root": {
-    padding: theme.spacing(1),
-  },
-}));
 
 function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
@@ -63,11 +39,11 @@ BootstrapDialogTitle.propTypes = {
 function App({ setDataState,dataState,data,btnName,Add1,Add2,Index }) {
   const [singleCard, setSingleCard] = useState(true);
   const [openCard, setOpenCard] = useState(false);
-  const [dateState, setDateState] = useState(new Date());
+  // const [dateState, setDateState] = useState(new Date());
 
-  useEffect(() => {
-    setInterval(() => setDateState(new Date()), 30000);
-  }, []);
+  // useEffect(() => {
+  //   setInterval(() => setDateState(new Date()), 30000);
+  // }, []);
 
   const handleClickOpenCard = () => {
     setOpenCard(true);
@@ -104,6 +80,7 @@ function App({ setDataState,dataState,data,btnName,Add1,Add2,Index }) {
           Add1={Add1}
           Add2={Add2}
           Index={Index}
+          setSingleCard={setSingleCard}
           
           // AddWidgetData={data}
         />

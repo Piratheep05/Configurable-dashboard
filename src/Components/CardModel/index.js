@@ -7,7 +7,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import {
@@ -15,12 +14,9 @@ import {
   Button,
   FormLabel,
   Grid,
-  CardContent,
   FormControl,
   Select,
 } from "@mui/material";
-import { style } from "@mui/system";
-import { CompressOutlined } from "@mui/icons-material";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -65,13 +61,9 @@ export default function CustomizedDialogs(props) {
     data,
     setDataState,
     dataState,
-    setOpenCard,
     open,
-    open1,
     handleClose,
-    singleCard,
     carddata1,
-    odjdata,
     chartData1,
     Add1,
     Add2,
@@ -598,7 +590,7 @@ export default function CustomizedDialogs(props) {
 
               {/* // chart and card differentition  */}
 
-              {formValues.type == "chart" ? (
+              {formValues.type === "chart" ? (
                 <>
                   <Grid item lg={4} xs={12}>
                     <FormControl variant="outlined" size="small" fullWidth>
@@ -633,7 +625,7 @@ export default function CustomizedDialogs(props) {
                       onChange={handleInputChange}
                     />
                   </Grid>
-                  {formValues.charttype == "line" ? (
+                  {formValues.charttype === "line" ? (
                     <Grid item md={4} xs={12}>
                       <FormLabel>SeriesSmooth</FormLabel>
                       <TextField

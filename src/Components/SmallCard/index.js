@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Grid from "@mui/material/Grid";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -20,9 +20,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import DatePicker from "../DatePicker";
-import CardHeader from "@mui/material/CardHeader";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { alignProperty } from "@mui/material/styles/cssUtils";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -31,7 +29,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function Index(props) {
   const [openDelete, setOpenDelete] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
-  const [openPosition, setOpenPosition] = useState(false);
   const [cardData, setCardData] = useState(null);
 
   const handleClickDeleteOpen = () => {

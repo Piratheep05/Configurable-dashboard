@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { dataSet } from "../JsonData";
 import SmallCard from "../SmallCard";
 import Grid from "@mui/material/Grid";
 import Chart from "../Chart";
 import DatePicker from "../DatePicker";
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 export default function BasicCard() {
   const [dataState, setDataState] = useState(dataSet);
